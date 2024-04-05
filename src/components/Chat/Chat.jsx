@@ -1,8 +1,21 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { IoMdSend } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoMdPersonAdd } from "react-icons/io";
 import { MdAssignmentAdd } from "react-icons/md";
+import { useContext, useEffect } from "react";
+import  { SocketConnection } from "../../Contextapi/SocketContext";
 const Chat = () => {
+  const { socket } = useContext(SocketConnection);
+
+  useEffect(() => {
+    socket.on("connect", () => {
+      console.log("Connected");
+    });
+  }, []);
+  console.log(socket);
+
   return (
     <div className="w-full h-full flex flex-col justify-between gap-5">
       <div className="w-full flex items-center justify-between px-5 border-b py-5">
@@ -14,8 +27,8 @@ const Chat = () => {
           </div>
         </div>
         <div className="flex items-center gap-5">
-          <IoMdPersonAdd size={25} className="cursor-pointer"/>
-          <MdAssignmentAdd size={25} className="cursor-pointer"/>
+          <IoMdPersonAdd size={25} className="cursor-pointer" />
+          <MdAssignmentAdd size={25} className="cursor-pointer" />
           <div className="bg-slate-50 size-8 rounded-full flex items-center justify-center">
             <BsThreeDotsVertical size={20} className="text-black" />
           </div>

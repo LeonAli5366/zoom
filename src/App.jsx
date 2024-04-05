@@ -6,6 +6,11 @@ import Signup from "./components/Signup/Signup";
 import ClassRoom from "./components/ClassRoom/ClassRoom";
 
 const App = () => {
+
+
+    
+    
+
   return (
     <div className="bg-dark w-full relative">
       <Navbar />

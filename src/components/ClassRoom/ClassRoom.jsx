@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Chat from "../Chat/Chat";
 
 const ClassRoom = () => {
