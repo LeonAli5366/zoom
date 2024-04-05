@@ -15,12 +15,6 @@ export const SocketConnection = createContext();
         []
       );
     
-    //   useEffect(() => {
-    //     socket.on("connect", ()=>{
-    //       console.log("Connected");
-    //     })
-    //   }, [])
-    //   console.log(socket);
 
   const contextValue = {socket};
   return (
