@@ -45,7 +45,7 @@ const Home = () => {
                 <h1 className="font-medium">{d.name}</h1>
               </div>
               <div className="flex items-center gap-5">
-                <span className="text-darkblue">Online</span>
+                <span className="size-2 rounded-full bg-green-500"></span>
                 <button
                   onClick={() => setActive(i)}
                   className="bg-darkblue px-5 py-2 text-white font-medium rounded transition-all duration-300 hover:scale-105"
