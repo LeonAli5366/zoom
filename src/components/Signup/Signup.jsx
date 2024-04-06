@@ -1,40 +1,60 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
+  // all functions
+  const handleSignUp = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    const userData = {
+      name,
+      email,
+      password,
+    };
+
+    fetch("http://localhost:5000/api/v1/user/signup", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === "success") {
+          toast.success("user sign up successfully");
+          navigate("/");
+          form.reset();
+        } else {
+          toast.error("something went wrong");
+        }
+      });
+  };
   return (
     <div className="w-full h-screen bg-dark login">
-      <form className="flex flex-col items-center justify-evenly text-white form sm:h-[580px] sm:w-[400px] w-[300px] h-[450px] gap-2">
+      <form
+        onSubmit={handleSignUp}
+        className="flex flex-col items-center justify-evenly text-white form sm:h-[580px] sm:w-[400px] w-[300px] h-[450px] gap-2"
+      >
         <h3 className="sm:text-[2rem] text-[1.5rem] font-medium">
           Signup Here
         </h3>
-
         <div className="w-full flex flex-col gap-1">
-          <label
-            htmlFor="firstname"
-            className="cursor-pointer sm:text-base text-sm"
-          >
-            FirstName
+          <label htmlFor="name" className="cursor-pointer sm:text-base text-sm">
+            Name
           </label>
           <input
             type="text"
-            placeholder="firstname"
-            id="firstname"
-            name="firstname"
-            className="sm:py-2 py-1 outline-none pl-2 placeholder:italic bg-[rgba(255,255,255,0.07)] rounded"
-          />
-        </div>
-        <div className="w-full flex flex-col gap-1">
-          <label
-            htmlFor="lastname"
-            className="cursor-pointer sm:text-base text-sm"
-          >
-            LastName
-          </label>
-          <input
-            type="text"
-            placeholder="lastname"
-            id="lastname"
-            name="lastname"
+            placeholder="name"
+            id="name"
+            name="name"
             className="sm:py-2 py-1 outline-none pl-2 placeholder:italic bg-[rgba(255,255,255,0.07)] rounded"
           />
         </div>

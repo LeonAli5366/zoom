@@ -1,9 +1,49 @@
-import { Link } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import SetDataToLocalStorage from "../SetDataToLocalStroge/SetDataToLocalStroge";
+import { useContext } from "react";
+import { AuthContext } from "../../Contextapi/UserContext";
 const Login = () => {
+  const { refresh, setRefresh } = useContext(AuthContext);
+  const navigate = useNavigate();
+  // all functions
+  const handleLogInSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    const user = {
+      email,
+      password,
+    };
+
+    fetch("http://localhost:5000/api/v1/user/signin", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === "success") {
+          toast.success("login successful");
+          navigate("/");
+          SetDataToLocalStorage(data.userData);
+          // window.location.reload();
+          setRefresh(refresh + 1);
+          console.log(data.userData);
+        } else {
+          toast.error("something went wrong");
+        }
+      });
+  };
   return (
     <div className="w-full h-screen bg-dark login">
       <form
-        // onSubmit={handleLogInSubmit}
+        onSubmit={handleLogInSubmit}
         className="flex flex-col items-center justify-evenly text-white form sm:h-[520px] sm:w-[400px] w-[300px] h-[350px] sm:gap-0 gap-2"
       >
         <h3 className="sm:text-[2rem] text-[1.5rem] font-medium">Login Here</h3>
