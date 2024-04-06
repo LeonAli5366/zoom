@@ -12,6 +12,7 @@ const ClassRoom = () => {
   const { user } = useContext(AuthContext);
   const [myClass, setMyClass] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [refresh, setRefresh] = useState(1);
   const navigate = useNavigate();
 
   // const { _id } = myClass;
@@ -26,7 +27,7 @@ const ClassRoom = () => {
         setMyClass(data?.studentClasses[0]);
         setLoading(false);
       });
-  }, [user]);
+  }, [user, refresh]);
 
   const handleDeleteClass = () => {
     console.log();
@@ -109,12 +110,17 @@ const ClassRoom = () => {
                     Delete Class
                   </button>
                 </div>
-                <div className="w-full h-full">
-                  {toggle === "chat" ? <Chat myClass={myClass} /> : ""}
-                  {toggle === "assignment" ? <Assignment /> : ""}
-                  {toggle === "result" ? <Result /> : ""}
-                  {toggle === "allstudent" ? <AllStudent /> : ""}
-                </div>
+                {toggle === "chat" ? <Chat myClass={myClass} /> : ""}
+                {toggle === "assignment" ? (
+                  <Assignment
+                    myClass={myClass}
+                    refresh={refresh}
+                    setRefresh={setRefresh}
+                  />
+                ) : (
+                  ""
+                )}
+                {toggle === "result" ? <Result /> : ""}
               </div>
             </>
           ) : (
