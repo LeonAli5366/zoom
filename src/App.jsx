@@ -6,6 +6,7 @@ import Signup from "./components/Signup/Signup";
 import ClassRoom from "./components/ClassRoom/ClassRoom";
 import { useState } from "react";
 import CreateClass from "./components/CreateClass/CreateClass";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const [select, setSelect] = useState(false);
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/classroom" element={<ClassRoom />} />
       </Routes>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
