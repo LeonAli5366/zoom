@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contextapi/UserContext";
 
-const Navbar = () => {
+const Navbar = ({ setSelect }) => {
   const { refresh, setRefresh, user } = useContext(AuthContext);
   console.log(user);
   const [active, setactive] = useState(false);
@@ -23,7 +24,10 @@ const Navbar = () => {
             <button className="bg-darkblue px-4 py-2 rounded transition-all duration-300 hover:scale-105">
               <Link to="/classroom">Class Room</Link>
             </button>
-            <button className="px-7 py-3 bg-gradient-to-r from-darkblue to-lightblue rounded-full transition-all duration-300 hover:scale-105">
+            <button
+              onClick={() => setSelect((prev) => !prev)}
+              className="px-7 py-3 bg-gradient-to-r from-darkblue to-lightblue rounded-full transition-all duration-300 hover:scale-105"
+            >
               Create A Class
             </button>
             <button
