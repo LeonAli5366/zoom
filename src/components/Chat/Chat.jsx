@@ -77,7 +77,6 @@ const Chat = ({myClass}) => {
 
           {messages.map((msg, i) => (
             <div key={i} className="flex flex-col gap-2">
-              <span className="text-xs">11:53 AM</span>
               <span className="text-left px-5 py-2 bg-darkblue rounded-tl-none rounded-xl">
                 {msg}
               </span>
@@ -85,7 +84,7 @@ const Chat = ({myClass}) => {
            ))} 
         </div>
         
-        <div className="w-full flex justify-end rotate-180">
+        <div className="w-full flex justify-end">
           <div className="flex flex-col items-end gap-2">
             <span className="text-xs">11:53 AM</span>
             <span className="text-left px-5 py-2 bg-lightblue rounded-br-none rounded-xl">
