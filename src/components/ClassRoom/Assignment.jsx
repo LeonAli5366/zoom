@@ -16,31 +16,34 @@ const Assignment = () => {
       <div className="w-full flex flex-col items-center gap-5 px-10">
         <span className="text-2xl font-semibold">All Assignment</span>
         <div className="w-full grid grid-cols-5 gap-5">
-            <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
-                <span>Assignment Link: dfgfghgf</span>
-                <span>Title: fdghfhgf</span>
-                <span>Description: fdghfhgf</span>
-            </div>
-            <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
-                <span>Assignment Link: dfgfghgf</span>
-                <span>Title: fdghfhgf</span>
-                <span>Description: fdghfhgf</span>
-            </div>
-            <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
-                <span>Assignment Link: dfgfghgf</span>
-                <span>Title: fdghfhgf</span>
-                <span>Description: fdghfhgf</span>
-            </div>
-            <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
-                <span>Assignment Link: dfgfghgf</span>
-                <span>Title: fdghfhgf</span>
-                <span>Description: fdghfhgf</span>
-            </div>
-            <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
-                <span>Assignment Link: dfgfghgf</span>
-                <span>Title: fdghfhgf</span>
-                <span>Description: fdghfhgf</span>
-            </div>
+          <a
+            href="https://www.youtube.com/watch?v=5NkQUkLfS9I"
+            className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium"
+          >
+            <span>Assignment Link: dfgfghgf</span>
+            <span>Title: fdghfhgf</span>
+            <span>Description: fdghfhgf</span>
+          </a>
+          <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
+            <span>Assignment Link: dfgfghgf</span>
+            <span>Title: fdghfhgf</span>
+            <span>Description: fdghfhgf</span>
+          </div>
+          <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
+            <span>Assignment Link: dfgfghgf</span>
+            <span>Title: fdghfhgf</span>
+            <span>Description: fdghfhgf</span>
+          </div>
+          <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
+            <span>Assignment Link: dfgfghgf</span>
+            <span>Title: fdghfhgf</span>
+            <span>Description: fdghfhgf</span>
+          </div>
+          <div className="rounded bg-lightblue flex flex-col items-center justify-center gap-3 p-5 font-medium">
+            <span>Assignment Link: dfgfghgf</span>
+            <span>Title: fdghfhgf</span>
+            <span>Description: fdghfhgf</span>
+          </div>
         </div>
       </div>
       {open && (
@@ -86,7 +89,6 @@ const Assignment = () => {
           </div>
         </div>
       )}
-      
     </div>
   );
 };

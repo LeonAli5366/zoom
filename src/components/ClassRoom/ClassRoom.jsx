@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import Assignment from "./Assignment";
 import Result from "./Result";
+import AllStudent from "./AllStudent";
 const ClassRoom = () => {
   const { user } = useContext(AuthContext);
   const [myClass, setMyClass] = useState([]);
@@ -87,13 +88,19 @@ const ClassRoom = () => {
                     Result
                   </button>
                   <button
-                      onClick={handleLeaveGroup}
-                      className="w-full py-5 bg-lightblue border-b"
-                    >
+                    onClick={() => setToggle("allstudent")}
+                    className="w-full py-5 bg-lightblue border-b"
+                  >
+                    All Student
+                  </button>
+                  <button
+                    onClick={handleLeaveGroup}
+                    className="w-full py-5 bg-lightblue border-b"
+                  >
                     Leave
                   </button>
                   <button
-                      onClick={handleDeleteClass}
+                    onClick={handleDeleteClass}
                     className={`w-full py-5 bg-lightblue border-b `}
                   >
                     {/* ${
@@ -102,9 +109,12 @@ const ClassRoom = () => {
                     Delete Class
                   </button>
                 </div>
-                {toggle === "chat" ? <Chat myClass={myClass} /> : ""}
-                {toggle === "assignment" ? <Assignment /> : ""}
-                {toggle === "result" ? <Result /> : ""}
+                <div className="w-full h-full">
+                  {toggle === "chat" ? <Chat myClass={myClass} /> : ""}
+                  {toggle === "assignment" ? <Assignment /> : ""}
+                  {toggle === "result" ? <Result /> : ""}
+                  {toggle === "allstudent" ? <AllStudent /> : ""}
+                </div>
               </div>
             </>
           ) : (
