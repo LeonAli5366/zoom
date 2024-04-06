@@ -42,6 +42,7 @@ const Modal = ({ d, setActive }) => {
         if (data.status === "success") {
           toast.success("class login successful");
           navigate("/");
+          window.location.reload();
         } else if (data.status === "fail") {
           toast.error(data.message);
         } else {
