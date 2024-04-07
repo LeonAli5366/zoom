@@ -3,10 +3,10 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contextapi/UserContext";
+import ClassContext from "../../Contextapi/ClassContext";
 
 const Navbar = ({ setSelect }) => {
   const { refresh, setRefresh, user } = useContext(AuthContext);
-  console.log(user);
   const [active, setactive] = useState(false);
   const logout = () => {
     localStorage.removeItem("chat-user");
@@ -41,9 +41,11 @@ const Navbar = ({ setSelect }) => {
               />
               {active && (
                 <div className="absolute -bottom-[88px] -left-8 bg-slate-50 text-dark">
-                  <button className="px-7 py-2 border-b hover:bg-slate-200">
-                    Profile
-                  </button>
+                  <Link to={'/profile'}>
+                    <button className="px-7 py-2 border-b hover:bg-slate-200">
+                      Profile
+                    </button>
+                  </Link>
                   <button
                     onClick={logout}
                     className="px-7 py-2 border-b hover:bg-slate-200"

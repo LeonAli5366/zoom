@@ -11,10 +11,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
   // </React.StrictMode>
   <BrowserRouter>
-    <SocketContext>
-      <UserContext>
-        <App />
-      </UserContext>
-    </SocketContext>
+    
+      <SocketContext>
+        <UserContext>
+          <App />
+        </UserContext>
+      </SocketContext>
   </BrowserRouter>
 );

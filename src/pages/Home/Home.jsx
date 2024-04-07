@@ -2,28 +2,28 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Modal from "../../components/Modal/Modal";
-const data = [
-  {
-    title: "fdhgfh",
-    name: "science",
-  },
-  {
-    title: "fdhgfh",
-    name: "science",
-  },
-  {
-    title: "fdhgfh",
-    name: "science",
-  },
-  {
-    title: "fdhgfh",
-    name: "science",
-  },
-  {
-    title: "fdhgfh",
-    name: "science",
-  },
-];
+// const data = [
+//   {
+//     title: "fdhgfh",
+//     name: "science",
+//   },
+//   {
+//     title: "fdhgfh",
+//     name: "science",
+//   },
+//   {
+//     title: "fdhgfh",
+//     name: "science",
+//   },
+//   {
+//     title: "fdhgfh",
+//     name: "science",
+//   },
+//   {
+//     title: "fdhgfh",
+//     name: "science",
+//   },
+// ];
 
 const Home = () => {
   const [active, setActive] = useState();
@@ -37,8 +37,8 @@ const Home = () => {
   return (
     <div className="w-full h-screen p-10 static pt-20">
       <div className="max-w-[60%] w-full h-full mx-auto flex flex-col gap-5">
-        <SearchBar />
-        <div className="w-full grid grid-cols-1 gap-3">
+        {/* <SearchBar /> */}
+        <div className="w-full grid grid-cols-1 gap-3 pt-20">
           {classes.map((singleClass, i) => (
             <div
               key={singleClass._id}

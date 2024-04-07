@@ -7,7 +7,7 @@ import { IoMdPersonAdd } from "react-icons/io";
 import { MdAssignmentAdd } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import { SocketConnection } from "../../Contextapi/SocketContext";
-const Chat = () => {
+const Chat = ({myClass}) => {
   const { socket } = useContext(SocketConnection);
 
   // ALL STATE
@@ -57,8 +57,8 @@ const Chat = () => {
         <div className="flex items-center gap-3">
           <span className="size-12 rounded-full bg-slate-100"></span>
           <div className="flex flex-col justify-center">
-            <h1>Baby Devs</h1>
-            <h1>5 Participants</h1>
+            <h1>{myClass?.classTitle}</h1>
+            <h1>{myClass?.students?.length} Participants</h1>
           </div>
         </div>
         <div className="flex items-center gap-5">

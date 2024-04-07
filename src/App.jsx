@@ -7,6 +7,7 @@ import ClassRoom from "./components/ClassRoom/ClassRoom";
 import { useState } from "react";
 import CreateClass from "./components/CreateClass/CreateClass";
 import { Toaster } from "react-hot-toast";
+import Profile from "./components/Profile/Profile";
 
 const App = () => {
   const [select, setSelect] = useState(false);
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/classroom" element={<ClassRoom />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Toaster position="top-center" reverseOrder={false} />
     </div>
