@@ -51,6 +51,7 @@ const ClassRoom = () => {
       .then((data) => {
         toast.success("leave class successfully");
         navigate("/");
+        window.location.reload();
       });
   };
 
@@ -121,6 +122,15 @@ const ClassRoom = () => {
                   ""
                 )}
                 {toggle === "result" ? <Result /> : ""}
+                {toggle === "allstudent" ? (
+                  <AllStudent
+                    myClass={myClass}
+                    refresh={refresh}
+                    setRefresh={setRefresh}
+                  />
+                ) : (
+                  ""
+                )}
               </div>
             </>
           ) : (

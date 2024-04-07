@@ -7,7 +7,6 @@ import { toast } from "react-hot-toast";
 
 const Assignment = ({ myClass, refresh, setRefresh }) => {
   const homeworks = myClass?.homework;
-  console.log(homeworks);
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleCreateAssignment = (event) => {
